@@ -8,7 +8,7 @@ if [ -f .git/info/exclude ]; then
   rm .git/info/exclude-bak
 fi
 
-if git ls-remote --exit-code convox > /dev/null 2>&1; then
+if git config remote.convox.url > /dev/null; then
   echo "Removing convox git remote"
   git remote remove convox
 fi

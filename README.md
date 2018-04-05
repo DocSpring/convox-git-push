@@ -46,8 +46,7 @@ git push convox
 * Ensure you don't include any files by accident (e.g. you forgot to add something to `.dockerignore`)
 * No need to `git stash` or `git checkout` before deploying new code.
 * Easily push a different branch to convox, e.g. `git push convox mybranch:master`
-* Makes convox feel like Heroku
-* `git push` deploys are cool
+* Makes convox feel like Heroku, and `git push` deploys are cool
 
 
 ### Uninstall

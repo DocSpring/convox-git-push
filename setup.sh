@@ -11,7 +11,7 @@ if [ -d .convox-build ]; then
   exit 1
 fi
 
-if git ls-remote --exit-code convox > /dev/null 2>&1; then
+if git config remote.convox.url > /dev/null; then
   echo "convox remote already exists!"
   exit 1
 fi
