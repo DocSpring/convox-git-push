@@ -48,3 +48,11 @@ git push convox
 * Easily push a different branch to convox, e.g. `git push convox mybranch:master`
 * Makes convox feel like Heroku
 * `git push` deploys are cool
+
+
+### Uninstall
+
+```bash
+cd <your project directory>
+curl -s https://raw.githubusercontent.com/FormAPI/convox-git-push/master/uninstall.sh | bash
+```
