@@ -1,6 +1,13 @@
 # "git push" deploys for convox
 
-### Setup
+### Setup (Script)
+
+```bash
+cd <your project directory>
+curl -s https://raw.githubusercontent.com/FormAPI/convox-git-push/master/setup.sh | bash
+```
+
+### Setup (Manual)
 
 ```bash
 cd <your project directory>
