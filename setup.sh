@@ -20,13 +20,17 @@ touch .git/info/exclude
 grep -q .convox-build .git/info/exclude || echo ".convox-build" >> .git/info/exclude
 
 git clone . ./.convox-build
-git remote add convox ./.convox-build
 (cd ./.convox-build && git config --local receive.denyCurrentBranch updateInstead)
 
+echo "Adding convox git remote..."
+git remote add convox ./.convox-build
+
 if [ -d .convox ]; then
+  echo "Symlinking .convox/ into build dir..."
   ln -fs ../.convox ./.convox-build/.convox
 fi
 
+echo "Setting up post-receive hook in build dir..."
 cat > ./.convox-build/.git/hooks/post-receive <<EOF
 #!/bin/sh
 read OLDSHA NEWSHA REF
