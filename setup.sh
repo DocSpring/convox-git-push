@@ -37,7 +37,7 @@ read OLDSHA NEWSHA REF
 # Do nothing if branch was deleted
 if [ "\$NEWSHA" = "0000000000000000000000000000000000000000" ]; then exit; fi
 cd ..
-echo "Deploying $(git rev-parse HEAD) to convox..."
+echo "Deploying \$(git rev-parse HEAD) to convox..."
 convox deploy
 EOF
 chmod +x .convox-build/.git/hooks/post-receive
