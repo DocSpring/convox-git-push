@@ -1,5 +1,18 @@
 # "git push" deploys for convox
 
+### Introduction
+
+[convox/rack](https://github.com/convox/rack) is an open-source PaaS,
+"built entirely on AWS cloud services for maximum privacy and minimum upkeep".
+
+You can use the convox CLI to deploy new code by running `convox deploy`.
+The deploy command creates a tarball of all files in the project directory, excluding files
+listed in `.dockerignore`.
+
+[setup.sh](setup.sh) clones your project into `.convox-build`, sets up a [git post-receive hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) that runs `convox deploy`, and sets up a `convox` git remote pointing to `.convox-build`.
+You can run `git push convox` to deploy new code.
+
+
 ### Setup (Script)
 
 ```bash
