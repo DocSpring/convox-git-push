@@ -40,9 +40,10 @@ cat > ./.convox-build/.git/hooks/post-receive <<EOF
 #!/bin/sh
 read OLDSHA NEWSHA REF
 # Do nothing if branch was deleted
-if [ "\$NEWSHA" = "0000000000000000000000000000000000000000" ]; then exit; fi
+if [ "$NEWSHA" = "0000000000000000000000000000000000000000" ]; then exit; fi
+REVISION=$(git rev-parse HEAD)
+echo "Deploying $REVISION to convox..."
 cd ..
-echo "Deploying \$(git rev-parse HEAD) to convox..."
 convox deploy
 EOF
 chmod +x .convox-build/.git/hooks/post-receive
